@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="capicp.test.sherlockdrawer"
+    package="com.capicp.quotesbook"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -22,13 +22,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="capicp.test.sherlockdrawer.PensamientoActivity"
+            android:name="com.capicp.quotesbook.PensamientoActivity"
             android:label="@string/title_activity_pensamiento"
             android:parentActivityName="capicp.test.sherlockdrawer.PrincipalActivity"
                 >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="capicp.test.sherlockdrawer.PrincipalActivity"
+                android:value="com.capicp.quotesbook.PrincipalActivity"
                 />
         </activity>
         <service android:name=".tasks.PensamientoServicio">

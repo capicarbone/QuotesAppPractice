@@ -45,9 +45,7 @@ public class PrincipalActivity extends DrawerActivity {
 
         if (categoria != -1)
             listado = new FragmentListaPensamientos(categoria, pensamiento_id);
-
-
-        Log.d("Principal", "Llegó aquí");
+        
 
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.add(R.id.listado, listado);

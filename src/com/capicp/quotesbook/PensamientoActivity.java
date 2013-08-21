@@ -17,10 +17,11 @@ import com.capicp.quotesbook.data.Pensamiento;
 
 public class PensamientoActivity extends SherlockFragmentActivity {
 
-    public static final String PENSAMIENTO_MENSAJE = "capicp.test.sherlockdrawer.PENSAMIENTO_MENSAJE";
-    public static final String PENSAMIENTO_AUTOR = "capicp.test.sherlockdrawer.PENSAMIENTO_AUTOR";
-    public static final String PENSAMIENTO_AUTOR_DESCRIPCION = "capicp.test.sherlockdrawer.PENSAMIENTO_AUTOR_DESCRIPCION";
-    public static final String PENSAMIENTO_AUTOR_FOTO = "capicp.test.sherlockdrawer.PENSAMIENTO_AUTOR_FOTO";
+	public static final String PENSAMIENTO_OBJETO = "com.capicp.quotesbook.PENSAMIENTO";
+    public static final String PENSAMIENTO_MENSAJE = "com.capicp.quotesbook.PENSAMIENTO_MENSAJE";
+    public static final String PENSAMIENTO_AUTOR = "com.capicp.quotesbook.PENSAMIENTO_AUTOR";
+    public static final String PENSAMIENTO_AUTOR_DESCRIPCION = "com.capicp.quotesbook.PENSAMIENTO_AUTOR_DESCRIPCION";
+    public static final String PENSAMIENTO_AUTOR_FOTO = "com.capicp.quotesbook.PENSAMIENTO_AUTOR_FOTO";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,12 +35,8 @@ public class PensamientoActivity extends SherlockFragmentActivity {
         if (savedInstanceState == null){
             Intent i = getIntent();
 
-            Pensamiento pensamiento = new Pensamiento();
-            pensamiento.setCita(i.getStringExtra(PENSAMIENTO_MENSAJE));
-            pensamiento.setAutor_descripcion(i.getStringExtra(PENSAMIENTO_AUTOR_DESCRIPCION));
-            pensamiento.setAutor_nombre(i.getStringExtra(PENSAMIENTO_AUTOR));
-            pensamiento.setAutor_foto(i.getStringExtra(PENSAMIENTO_AUTOR_FOTO));
-
+            Pensamiento pensamiento = i.getExtras().getParcelable(PENSAMIENTO_OBJETO);
+            
             FragmentPensamiento pensamientoFr = new FragmentPensamiento(pensamiento);
 
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();

@@ -1,10 +1,13 @@
 package com.capicp.quotesbook.tasks;
 
+import com.capicp.quotesbook.PensamientoActivity;
 import com.capicp.quotesbook.R;
 import com.capicp.quotesbook.data.PensamientoBDHelper;
 
 import android.app.IntentService;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.support.v4.app.TaskStackBuilder;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
@@ -55,11 +58,22 @@ public class PensamientoServicio extends IntentService {
 
                 wait(tiempo_espera - System.currentTimeMillis());
 
+                Intent intent_pensamiento = new Intent(this, PensamientoActivity.class);
+                intent_pensamiento.putExtra(PensamientoActivity.PENSAMIENTO_OBJETO, p);
+                
+                TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
+                stackBuilder.addNextIntent(intent_pensamiento);
+                
+                PendingIntent resultPendingIntent = stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
 
                 NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this)
                         .setSmallIcon(PensamientoBDHelper.obtenerFoto(p.getAutor_foto()))
                         .setContentTitle(p.getAutor_nombre())
-                        .setContentText(p.getCita());
+                        .setContentText(p.getCita())
+                        .setContentIntent(resultPendingIntent)
+                        .setAutoCancel(true);
+                
+                
 
                 NotificationManager nmanager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
                 nmanager.notify(24, mBuilder.build());

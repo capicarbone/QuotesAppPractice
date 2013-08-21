@@ -1,5 +1,6 @@
 package com.capicp.quotesbook;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
@@ -32,6 +33,7 @@ import com.capicp.quotesbook.data.PensamientosLoader;
 /**
  * Created by capi on 22/06/13.
  */
+@SuppressLint("ValidFragment")
 public class FragmentListaPensamientos extends SherlockListFragment implements LoaderManager.LoaderCallbacks<List<Pensamiento>> {
 
     private static final String _ID = "FragmentListaPensamientos";
@@ -192,10 +194,13 @@ public class FragmentListaPensamientos extends SherlockListFragment implements L
             ft.commit();
         }else{
             Intent intent = new Intent(getSherlockActivity(), PensamientoActivity.class);
-            intent.putExtra(PensamientoActivity.PENSAMIENTO_MENSAJE, pn.getCita());
-            intent.putExtra(PensamientoActivity.PENSAMIENTO_AUTOR, pn.getAutor_nombre());
-            intent.putExtra(PensamientoActivity.PENSAMIENTO_AUTOR_DESCRIPCION, pn.getAutor_descripcion());
-            intent.putExtra(PensamientoActivity.PENSAMIENTO_AUTOR_FOTO, pn.getAutor_foto());
+            intent.putExtra(PensamientoActivity.PENSAMIENTO_OBJETO, pn);
+            
+//            intent.putExtra(PensamientoActivity.PENSAMIENTO_MENSAJE, pn.getCita());
+//            intent.putExtra(PensamientoActivity.PENSAMIENTO_AUTOR, pn.getAutor_nombre());
+//            intent.putExtra(PensamientoActivity.PENSAMIENTO_AUTOR_DESCRIPCION, pn.getAutor_descripcion());
+//            intent.putExtra(PensamientoActivity.PENSAMIENTO_AUTOR_FOTO, pn.getAutor_foto());
+            
             startActivity(intent);
         }
 

@@ -67,6 +67,16 @@ public class Pensamiento implements Parcelable{
     public void setId(long id) {
         this.id = id;
     }
+    
+    public static final Parcelable.Creator<Pensamiento> CREATOR= new Parcelable.Creator<Pensamiento>() {
+    		public Pensamiento createFromParcel(Parcel in) {
+    				return new Pensamiento(in);
+    		}
+    		
+    		public Pensamiento[] newArray(int size) {
+                return new Pensamiento[size];
+            }
+        };
 
     @Override
     public int describeContents() {
