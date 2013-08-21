@@ -194,12 +194,7 @@ public class FragmentListaPensamientos extends SherlockListFragment implements L
             ft.commit();
         }else{
             Intent intent = new Intent(getSherlockActivity(), PensamientoActivity.class);
-            intent.putExtra(PensamientoActivity.PENSAMIENTO_OBJETO, pn);
-            
-//            intent.putExtra(PensamientoActivity.PENSAMIENTO_MENSAJE, pn.getCita());
-//            intent.putExtra(PensamientoActivity.PENSAMIENTO_AUTOR, pn.getAutor_nombre());
-//            intent.putExtra(PensamientoActivity.PENSAMIENTO_AUTOR_DESCRIPCION, pn.getAutor_descripcion());
-//            intent.putExtra(PensamientoActivity.PENSAMIENTO_AUTOR_FOTO, pn.getAutor_foto());
+            intent.putExtra(PensamientoActivity.PENSAMIENTO_OBJETO, pn);                      
             
             startActivity(intent);
         }
