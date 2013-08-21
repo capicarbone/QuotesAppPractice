@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">QuotesBook</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="drawer_abierto">Opciones</string>
+    <string name="drawer_cerrado">Contenido</string>
+
+    <string-array name="categorias">
+        <item>Todos</item>
+        <item>Emprendedores</item>
+        <item>Escritores</item>
+        <item>Líderes</item>
+    </string-array>
+
+    <string name="texto_test">        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis lectus metus, at posuere neque. Sed pharetra nibh eget orci convallis at posuere leo convallis. Sed blandit augue vitae augue scelerisque bibendum. Vivamus sit amet libero turpis, non venenatis urna. In blandit, odio convallis suscipit venenatis, ante ipsum cursus augue.</string>
+    <string name="title_activity_pensamiento">Pensamiento</string>
+
+</resources>
